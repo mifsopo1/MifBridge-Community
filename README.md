@@ -32,13 +32,13 @@ which reads them from the source rather than from a hand-kept copy.
 
 ## Reporting a bug
 
-[Open an issue](../../issues/new/choose) using the bug report template. The most useful reports say:
+[Open a Bridge report](../../issues/new?template=bridge-report.yml). The form asks for one JSON block:
+the endpoint you called, the payload you sent, what you expected, and what actually happened.
 
-1. which endpoint (Unreal) or op (Blender) you called, and with what parameters;
-2. which engine or Blender version;
-3. what came back, and what you expected instead.
-
-A crash log or editor output helps a great deal.
+Reports carrying the `bridge-report` label may be picked up and worked automatically. Only the JSON
+block is ever replayed - prose is read, never run - and any asset paths in it are rewritten into
+scratch space first, so your own assets are never opened. If a bug only happens on one specific asset,
+say so in the notes; that one needs a human.
 
 ## Licence
 
