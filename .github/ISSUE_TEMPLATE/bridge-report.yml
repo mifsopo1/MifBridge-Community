@@ -10,10 +10,10 @@ body:
 
         Two things make that safe, and both need your help:
 
-        1. The JSON block below is the ONLY part that ever gets replayed. Prose is read, never run.
-        2. Asset paths you name are rewritten into scratch space before anything executes, so your
-           own assets are never opened. That means the repro tests the SHAPE of the bug. If a bug
-           only happens on one specific asset, say so in the notes - that one needs a human.
+        1. The JSON block below is the ONLY part that ever gets replayed. Your notes are read by a person and never run.
+        2. Asset paths you name are moved into a scratch folder before anything runs, so your own
+           assets are never opened. That means the repro tests the SHAPE of the bug. If a bug only
+           happens with one particular asset, say so in the notes, because that one needs a person.
   - type: textarea
     id: report
     attributes:
@@ -27,8 +27,8 @@ body:
           "expected": "what you expected to happen",
           "actual": "what actually happened",
           "dll": "the built <date> string from self_audit",
-          "notes": "anything else - read by a human, never executed",
-          "discord": "your Discord user id, optional - you get pinged when this is fixed"
+          "notes": "anything else; read by a person and never run",
+          "discord": "your Discord user id, optional; you get pinged when this is fixed"
         }
         ```
     validations:

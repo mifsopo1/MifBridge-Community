@@ -2,45 +2,60 @@
 
 # MifBridge
 
-**Typed, verified automation for Unreal Engine and Blender — driven by an AI agent, read back from the editor.**
+**Let AI work in Unreal Engine and Blender. Every change is checked.**
 
-[Website](https://mifshowcase.store) · [Documentation](https://mifshowcase.store/docs) · [API reference](https://mifshowcase.store/api-reference) · [Engine support](https://mifshowcase.store/engines) · [Changelog](https://mifshowcase.store/changelog)
+[Website](https://mifshowcase.store) · [Docs](https://mifshowcase.store/docs) · [All commands](https://mifshowcase.store/api-reference) · [Supported versions](https://mifshowcase.store/engines) · [Showcase](https://mifshowcase.store/showcase) · [Changelog](https://mifshowcase.store/changelog) · [Discord](https://discord.gg/Q493hqFQDQ)
 
 </div>
 
 ---
 
-MifBridge is a Model Context Protocol (MCP) server fronting two backends:
+MifBridge lets Claude and other AI assistants work inside Unreal Engine and Blender. It is an MCP server
+(MCP is the Model Context Protocol, the standard way AI apps call tools) with two parts:
 
-- **MifBridge** — an in-editor Unreal Engine plugin. Build, wire and compile Blueprint graphs, work with
-  assets, levels, materials and sequences, and get the engine's own answer back — compiler errors mapped
-  to node and pin, not a screenshot.
-- **MifBlender** — a Blender addon. Model, UV-unwrap, rig, light, animate, author geometry nodes and
-  render, as typed and guarded operations rather than arbitrary Python.
+- **MifBridge**, a plugin for the Unreal Editor. The AI can build and wire Blueprints, work with assets,
+  levels, materials and sequences, and gets the editor's own answer back. When a Blueprint fails to
+  compile, the AI is told which node and pin caused it.
+- **MifBlender**, a free Blender add-on under the MIT license. The AI can model, unwrap UVs, rig, light,
+  animate, build Geometry Nodes and render. Each operation checks what it is given and refuses a bad
+  value with the values that would work.
 
-Every write is read back from the editor before it reports success, and a write that did not happen is
-reported as one.
+After every change, MifBridge looks at the editor to confirm the change really happened and tells the AI
+exactly what it found. If a change did not happen, the AI is told that too.
+
+You stay in charge of what the AI may do. MifBridge has three levels: read (look only), scratch (it can
+make changes but cannot save them or run risky commands) and full. Only a person can change the level,
+in the editor.
+
+## Get it
+
+- **MifBridge:** on [Fab](https://www.fab.com/listings/cfca3a10-c4b4-4737-a029-3bac2703f50a) or on
+  [mifshowcase.store](https://mifshowcase.store/store).
+- **MifBlender:** a free download from [mifshowcase.store/mifblender](https://mifshowcase.store/mifblender).
+
+The website lists the supported Unreal Engine and Blender versions and how many commands each part has,
+with the test results behind every number.
 
 ## About this repository
 
-**The MifBridge source is private.** This repository is its public front door: it exists so the links
-above have a home, and so you can report a bug.
-
-MifBridge is distributed through Epic's **Fab** marketplace. Current figures — supported engine
-versions, endpoint and operation counts — are published on the [website](https://mifshowcase.store),
-which reads them from the source rather than from a hand-kept copy.
+The MifBridge source code is private. This repository is its public home: it holds the links above and a
+place to report bugs.
 
 ## Reporting a bug
 
-[Open a Bridge report](../../issues/new?template=bridge-report.yml). The form asks for one JSON block:
-the endpoint you called, the payload you sent, what you expected, and what actually happened.
+[Open a Bridge report](../../issues/new?template=bridge-report.yml). The form asks for one JSON block: the
+command you called, what you sent, what you expected and what actually happened.
 
-Reports carrying the `bridge-report` label may be picked up and worked automatically. Only the JSON
-block is ever replayed - prose is read, never run - and any asset paths in it are rewritten into
-scratch space first, so your own assets are never opened. If a bug only happens on one specific asset,
-say so in the notes; that one needs a human.
+Reports with the `bridge-report` label may be picked up and worked on automatically. Only the JSON block
+is ever replayed; your notes are read by a person and never run. Any asset paths in it are moved into a
+scratch folder first, so your own assets are never opened. If a bug only happens with one particular
+asset, say so in the notes, because that one needs a person to look at it.
 
-## Licence
+No GitHub account? Use the form at [mifshowcase.store/report](https://mifshowcase.store/report), or ask in
+[Discord](https://discord.gg/Q493hqFQDQ).
 
-MifBridge is proprietary software. See [LICENSE](LICENSE). This repository contains documentation only;
-it does not grant any right to the software itself.
+## License
+
+MifBridge is proprietary software; see [LICENSE](LICENSE) and the plain-English summary at
+[mifshowcase.store/legal](https://mifshowcase.store/legal). MifBlender is under the MIT license. This
+repository holds documentation only and does not grant any right to the software itself.
