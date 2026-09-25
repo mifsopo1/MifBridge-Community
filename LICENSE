@@ -5,6 +5,11 @@ Copyright (c) 2026 Mifsopo ("Mif"). All rights reserved.
 This software is NOT open source and NOT redistributable. It is licensed, not
 sold, and only on the terms below.
 
+SCOPE. This licence covers MifBridge except the MifBlender Blender add-on in
+tools/blender-addon/. That add-on carries its own MIT licence
+(tools/blender-addon/MifBlender/LICENSE), is distributed separately from the Fab
+package, and nothing below restricts it.
+
 
 1. WHAT YOU MAY DO
 
@@ -46,18 +51,22 @@ only.
 
 4. CONTRIBUTIONS
 
-Contributions submitted to this project are licensed to the copyright holder for
-use under these terms and any future terms the project adopts. Contributors keep
-the copyright in what they wrote and are credited in NOTICE.md.
+If you contribute to MifBridge - code, documentation, tests or anything else
+merged into it - you keep the copyright in what you wrote. By submitting it you
+give the copyright holder a perpetual, worldwide, royalty-free, irrevocable
+licence to use, copy, modify, distribute, sublicense and sell it as part of
+MifBridge, under these terms or any terms the project adopts later, including
+sale on Fab. You confirm you have the right to give that licence. Contributors
+are credited in NOTICE.md.
 
 
 5. THIRD-PARTY COMPONENTS
 
 MifBridge contains material under other licences, set out in full in NOTICE.md.
 Those terms govern that material and are not superseded by this file. In
-particular, part of the Blender backend is adapted from blender-mcp under the MIT
-licence, whose copyright and permission notice are reproduced in NOTICE.md as
-that licence requires.
+particular, the MCP server's Blender connection framing is adapted from
+blender-mcp under the MIT licence, whose copyright and permission notice are
+reproduced in NOTICE.md as that licence requires.
 
 MifBridge links Unreal Engine at build time. The engine is governed by Epic
 Games' Unreal Engine EULA, not by this licence, and no engine source is
